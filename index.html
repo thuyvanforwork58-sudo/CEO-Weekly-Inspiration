@@ -2,158 +2,200 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>CEO Weekly Inspiration - Be a Victor, Not a Victim</title>
+  <title>CEO Weekly Inspiration — Bilingual (EN/VI)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    :root {
-      --brand: #FF6A00;
-      --text: #1B1B1B;
-      --muted: #666;
-      --bg: #FFFFFF;
-      --soft1: #fff7f0;
-      --soft2: #fffdf9;
+    :root{
+      --brand:#FF6A00;
+      --text:#1B1B1B;
+      --muted:#666;
+      --bg:#FFFFFF;
+      --soft1:#fff7f0;
+      --soft2:#fffdf9;
     }
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
-      font-size: 16px;
-      line-height: 1.7;
-      padding: 20px;
-      max-width: 920px;
-      margin-inline: auto;
+    body{
+      margin:0; background:var(--bg); color:var(--text);
+      font-family:"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+      font-size:16px; line-height:1.7;
+      padding:20px; max-width:920px; margin-inline:auto;
     }
-    img.banner {
-      width: 100%;
-      display: block;
-      border-radius: 10px;
-      margin-bottom: 18px;
+    img.banner{width:100%;display:block;border-radius:10px;margin-bottom:18px;}
+    .title-block{text-align:right;margin-bottom:22px;}
+    .kicker{font-size:14px;text-transform:uppercase;letter-spacing:1px;color:var(--brand);font-weight:700;}
+    .headline{font-size:28px;font-weight:800;color:#000;margin-top:4px;}
+    .date{font-size:14px;color:var(--muted);margin-top:4px;}
+
+    /* Highlights */
+    .highlight-high{color:var(--brand);font-weight:800;}
+    .highlight-low{color:var(--text);font-weight:700;} /* black bold only */
+
+    /* Quote styling */
+    blockquote{
+      background:linear-gradient(135deg,var(--soft1),var(--soft2));
+      border-left:6px solid var(--brand);
+      padding:22px 28px;margin:28px 0;border-radius:12px;
+      position:relative;box-shadow:0 2px 6px rgba(0,0,0,.05);
+      font-style:italic;font-size:18px;line-height:1.8;color:#2a2a2a;
+      transition:transform 0.2s ease;
     }
-    .title-block {
-      text-align: right;
-      margin-bottom: 22px;
+    blockquote:hover{transform:translateY(-2px);}
+    blockquote::before{
+      content:"“";position:absolute;left:12px;top:-28px;
+      font-size:120px;line-height:1;color:var(--brand);
+      opacity:0.08;font-family:Georgia,serif;pointer-events:none;
     }
-    .kicker {
-      font-size: 14px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--brand);
-      font-weight: 700;
+    blockquote::after{
+      content:"”";position:absolute;right:16px;bottom:-28px;
+      font-size:100px;line-height:1;color:var(--brand);
+      opacity:0.05;font-family:Georgia,serif;pointer-events:none;
     }
-    .headline {
-      font-size: 28px;
-      font-weight: 800;
-      color: #000;
-      margin-top: 4px;
+
+    a{color:#0078d4;text-decoration:none;}a:hover{text-decoration:underline;}
+    .video{margin:20px 0;border-radius:10px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.08);}
+    .video iframe{width:100%;height:360px;border:0;}
+
+    .lang-switch{position:sticky;top:10px;display:flex;justify-content:flex-end;gap:8px;margin-bottom:10px;}
+    .lang-switch button{
+      border:2px solid var(--brand);background:#fff;color:var(--brand);
+      padding:6px 10px;border-radius:999px;font-weight:700;font-size:13px;cursor:pointer;
+      transition:transform .06s ease,background .15s ease,color .15s ease;
     }
-    .date {
-      font-size: 14px;
-      color: var(--muted);
-      margin-top: 4px;
-    }
-    .highlight-high {
-      color: var(--brand);
-      font-weight: 800;
-    }
-    .highlight-low {
-      font-weight: 700;
-    }
-    blockquote {
-      background: linear-gradient(135deg, var(--soft1), var(--soft2));
-      border-left: 6px solid var(--brand);
-      padding: 20px 24px;
-      margin: 24px 0;
-      border-radius: 12px;
-      position: relative;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, .05);
-      font-style: italic;
-    }
-    blockquote::before {
-      content: "\"";
-      position: absolute;
-      left: 10px;
-      top: -24px;
-      font-size: 120px;
-      line-height: 1;
-      color: var(--brand);
-      opacity: .08;
-      font-family: Georgia, serif;
-      pointer-events: none;
-    }
-    .video {
-      margin: 20px 0;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 1px 4px rgba(0, 0, 0, .08);
-    }
-    .video iframe {
-      width: 100%;
-      height: 360px;
-      border: 0;
-    }
-    @media(max-width:640px) {
-      .title-block { text-align: center; }
-      .headline { font-size: 22px; }
-      .video iframe { height: 240px; }
+    .lang-switch button:hover{transform:translateY(-1px);}
+    .lang-switch button.active{background:var(--brand);color:#fff;}
+
+    .lang{display:none;}
+    .lang.active{display:block;}
+
+    @media(max-width:640px){
+      .title-block{text-align:center;}
+      .headline{font-size:22px;}
+      .video iframe{height:240px;}
+      .lang-switch{justify-content:center;}
     }
   </style>
 </head>
 <body>
-  <img class="banner"
-       src="https://thuyvanforwork58-sudo.github.io/CEO-Weekly-Inspiration/assets/banner.png"
-       alt="CEO Weekly Inspiration banner" />
-  <div class="title-block">
-    <div class="kicker">CEO WEEKLY INSPIRATION</div>
-    <div class="headline">Be a Victor, Not a Victim: The Power of Gratitude to Shape Your Future</div>
-    <div class="date">October 5, 2025</div>
+  <div class="lang-switch">
+    <button id="btn-en" class="active">🇬🇧 English</button>
+    <button id="btn-vi">🇻🇳 Tiếng Việt</button>
   </div>
 
-  <p>Team,</p>
-  <p>I want to wish you a Happy Gratitude Sunday. It is an amazing day in Wisconsin, great weather, and an awesome day to be alive and thriving. Great day to stay focused and rigorous on your rituals and routines.</p>
+  <img class="banner" src="https://thuyvanforwork58-sudo.github.io/CEO-Weekly-Inspiration/assets/banner.png" alt="CEO Weekly Inspiration banner" />
 
-  <p>I want to talk about a simple but powerful truth: <span class="highlight-high">we get what we focus on</span>. Our lives today are a direct result of the choices and the focus we had yesterday. Our future will be a direct result of the choices and the focus we have today.</p>
+  <!-- ===== ENGLISH ===== -->
+  <div id="lang-en" class="lang active" lang="en">
+    <div class="title-block">
+      <div class="kicker">CEO WEEKLY INSPIRATION</div>
+      <div class="headline">Be a Victor, Not a Victim: The Power of Gratitude to Shape Your Future</div>
+      <div class="date">October 5, 2025</div>
+    </div>
 
-  <p>It's easy to get pulled into the negativity happening around us - the news, the economy, the constant stream of problems. You can let that noise dictate your mindset, and if you do, you’ll slip into a <span class="highlight-low">scarcity mentality</span>, always feeling like you're behind or that things are happening to you.</p>
+    <p>Team,</p>
+    <p>I want to wish you a Happy Gratitude Sunday. It is an amazing day in Wisconsin, great weather, and an awesome day to be alive and thriving. Great day to stay focused and rigorous on your rituals and routines.</p>
 
-  <p>But we have a choice. We can choose to be a victim of our circumstances, complaining about the challenges and focusing on what's wrong. Or, we can choose to be a <span class="highlight-high">victor</span>, focusing on the incredible abundance of opportunities we have, taking ownership of our attitude, and creating the outcomes we want.</p>
+    <p>I want to talk about a simple but powerful truth: <span class="highlight-high">we get what we focus on</span>. Our lives today are a direct result of the choices and the focus we had yesterday. Our future will be a direct result of the choices and the focus we have today.</p>
 
-  <p>The single most powerful tool for choosing to be a victor is <span class="highlight-high">gratitude</span>. This isn't just about feeling good. Research from top universities proves that gratitude literally rewires your brain. People who consistently practice it sleep better, handle stress more effectively, and maintain a more positive and resilient attitude. Gratitude trains your mind to spot opportunities instead of fixating on obstacles.</p>
+    <p>It's easy to get pulled into the negativity happening around us - the news, the economy, the constant stream of problems. You can let that noise dictate your mindset, and if you do, you’ll slip into a <span class="highlight-low">scarcity mentality</span>, always feeling like you're behind or that things are happening to you.</p>
 
-  <p>Here’s what most people get wrong about gratitude: it’s not just for when life is good. It’s most powerful when life is hard. Anyone can be thankful when things are easy. But champions learn to be grateful during the struggle. When you're facing a tough challenge and you force yourself to find something to be grateful for - the lesson, the strength you're building, the opportunity to prove yourself - you break the cycle of negativity and regain control of your mindset. That is <span class="highlight-low">mental toughness</span>. That is how you <span class="highlight-low">build resilience</span>.</p>
+    <p>But we have a choice. We can choose to be a victim of our circumstances, complaining about the challenges and focusing on what's wrong. Or, we can choose to be a <span class="highlight-high">victor</span>, focusing on the incredible abundance of opportunities we have, taking ownership of our attitude, and creating the outcomes we want.</p>
 
-  <blockquote>
-    <p>Gratitude is most powerful not when life is easy - but when life is hard. Champions learn to be grateful during the struggle. That is <span class="highlight-low">mental toughness</span>. That is how you <span class="highlight-low">build resilience</span>.</p>
-  </blockquote>
+    <p>The single most powerful tool for choosing to be a victor is <span class="highlight-high">gratitude</span>. This isn't just about feeling good. Research from top universities proves that gratitude literally rewires your brain. People who consistently practice it sleep better, handle stress more effectively, and maintain a more positive and resilient attitude. Gratitude trains your mind to spot opportunities instead of fixating on obstacles.</p>
 
-  <p>This victor mindset is fueled by your <span class="highlight-low">health</span> and your <span class="highlight-low">attitude</span>. When you choose to prioritize your physical health - through good food, consistent exercise, and quality sleep - you create the raw energy needed to maintain a positive attitude and execute at a high level. You can't have a world-class life with a second-class attitude and well-being.</p>
+    <p>Here’s what most people get wrong about gratitude: it’s not just for when life is good. It’s most powerful when life is hard. Anyone can be thankful when things are easy. But champions learn to be grateful during the struggle. When you're facing a tough challenge and you force yourself to find something to be grateful for - the lesson, the strength you're building, the opportunity to prove yourself - you break the cycle of negativity and regain control of your mindset. That is <span class="highlight-low">mental toughness</span>. That is how you <span class="highlight-low">build resilience</span>.</p>
 
-  <p>At Ashley, we are surrounded by massive opportunities, but only if we choose to see them.</p>
+    <blockquote>
+      <p>Gratitude is most powerful not when life is easy - but when life is hard. Champions learn to be grateful during the struggle. That is <span class="highlight-low">mental toughness</span>. That is how you <span class="highlight-low">build resilience</span>.</p>
+    </blockquote>
 
-  <ul>
-    <li>We don't have to deal with changing customer expectations; we <span class="highlight-low">get to</span> use our scale and talent to serve them better than anyone else in the world.</li>
-    <li>We don't have to figure out AI and automation; we <span class="highlight-low">get to</span> embrace these incredible tools to build a competitive moat and make our work more meaningful and productive.</li>
-    <li>We don't have to build a better culture; we <span class="highlight-low">get to</span> serve our employees by creating the best place to work in our industry, where people can truly flourish.</li>
-  </ul>
+    <p>This victor mindset is fueled by your <span class="highlight-low">health</span> and your <span class="highlight-low">attitude</span>. When you choose to prioritize your physical health - through good food, consistent exercise, and quality sleep - you create the raw energy needed to maintain a positive attitude and execute at a high level. You can't have a world-class life with a second-class attitude and well-being.</p>
 
-  <p>We have a great plan and great people in our company. The future is unbelievably bright, but we must be excited about creating it. We must choose to see the abundance of opportunities in front of us instead of the scarcity of problems.</p>
+    <p>At Ashley, we are surrounded by massive opportunities, but only if we choose to see them.</p>
 
-  <p>So, this week, I challenge you to make a conscious choice. When you face a problem, choose to focus on the solution. When you feel stressed, choose to move your body and clear your mind. When you wake up, choose to be grateful for the opportunities you have in your life.</p>
+    <ul>
+      <li>We don't have to deal with changing customer expectations; we <span class="highlight-low">get to</span> use our scale and talent to serve them better than anyone else in the world.</li>
+      <li>We don't have to figure out AI and automation; we <span class="highlight-low">get to</span> embrace these incredible tools to build a competitive moat and make our work more meaningful and productive.</li>
+      <li>We don't have to build a better culture; we <span class="highlight-low">get to</span> serve our employees by creating the best place to work in our industry, where people can truly flourish.</li>
+    </ul>
 
-  <blockquote>
-    <p><span class="highlight-high">Don't be a victim. Be a victor.</span> Your career, your happiness, and your future depend on the choices you make every single day.</p>
-  </blockquote>
+    <p>We have a great plan and great people in our company. The future is unbelievably bright, but we must be excited about creating it. We must choose to see the abundance of opportunities in front of us instead of the scarcity of problems.</p>
+
+    <p>So, this week, I challenge you to make a conscious choice. When you face a problem, choose to focus on the solution. When you feel stressed, choose to move your body and clear your mind. When you wake up, choose to be grateful for the opportunities you have in your life.</p>
+
+    <blockquote>
+      <p><span class="highlight-high">Don't be a victim. Be a victor.</span> Your career, your happiness, and your future depend on the choices you make every single day.</p>
+    </blockquote>
+  </div>
+
+  <!-- ===== VIETNAMESE ===== -->
+  <div id="lang-vi" class="lang" lang="vi">
+    <div class="title-block">
+      <div class="kicker">CEO WEEKLY INSPIRATION</div>
+      <div class="headline">Hãy Là Người Chiến Thắng, Không Phải Nạn Nhân: Sức Mạnh Của Lòng Biết Ơn Định Hình Tương Lai</div>
+      <div class="date">05 Tháng 10, 2025</div>
+    </div>
+
+    <p>Team thân mến,</p>
+    <p>Tôi chúc mọi người một Chủ nhật của Lòng Biết Ơn thật tuyệt vời. Hôm nay ở Wisconsin là một ngày thật đẹp - thời tiết dễ chịu và thật tuyệt khi được sống, được làm việc, được phát triển. Đây là ngày hoàn hảo để giữ sự tập trung và kỷ luật trong những thói quen và nghi thức hằng ngày của bạn.</p>
+
+    <p>Tôi muốn chia sẻ một sự thật đơn giản nhưng mạnh mẽ: <span class="highlight-high">chúng ta nhận được những gì mình tập trung vào</span>. Cuộc sống hôm nay là kết quả của lựa chọn và sự tập trung hôm qua. Tương lai sẽ là kết quả của những gì ta chọn tập trung vào hôm nay.</p>
+
+    <p>Trong thế giới đầy biến động, thật dễ để bị cuốn theo tiêu cực - tin tức, kinh tế, vấn đề nối tiếp vấn đề. Nếu để tâm trí bị chi phối, bạn sẽ rơi vào <span class="highlight-low">tư duy khan hiếm</span>, luôn thấy mình bị động và mọi thứ đang xảy ra với mình.</p>
+
+    <p>Nhưng chúng ta có quyền lựa chọn. Bạn có thể chọn trở thành nạn nhân - phàn nàn và tập trung vào điều sai. Hoặc bạn có thể chọn trở thành <span class="highlight-high">người chiến thắng</span>, tập trung vào <span class="highlight-low">những cơ hội rộng mở quanh mình</span>, làm chủ thái độ, và tạo ra kết quả mà bạn mong muốn.</p>
+
+    <p><span class="highlight-high">Lòng biết ơn</span> là công cụ mạnh mẽ nhất để trở thành người chiến thắng. Đây không chỉ là cảm xúc tốt. Nhiều nghiên cứu cho thấy lòng biết ơn có thể tái lập mạch tư duy. Những người thực hành thường xuyên ngủ ngon hơn, xử lý căng thẳng tốt hơn, và duy trì thái độ tích cực, kiên cường. Lòng biết ơn giúp ta nhận ra cơ hội thay vì bị mắc kẹt trong khó khăn.</p>
+
+    <p>Điều nhiều người hay hiểu sai về lòng biết ơn là: chỉ biết ơn khi mọi việc suôn sẻ. Thực ra, <span class="highlight-low">lòng biết ơn mạnh nhất khi cuộc sống khó khăn</span>. Bất kỳ ai cũng có thể biết ơn khi mọi thứ dễ dàng. Nhưng những người dẫn dắt thực sự biết cách biết ơn giữa nghịch cảnh. Khi đối mặt thử thách mà bạn vẫn tìm được điều để biết ơn - bài học, sức mạnh đang rèn luyện, cơ hội để chứng tỏ bản thân - bạn phá vỡ vòng xoáy tiêu cực và giành lại quyền kiểm soát tư duy. Đó là <span class="highlight-low">bản lĩnh tinh thần</span>. Đó là cách bạn <span class="highlight-low">xây dựng sự kiên cường</span>.</p>
+
+    <blockquote>
+      <p>Lòng biết ơn mạnh mẽ nhất không phải khi mọi thứ thuận lợi - mà là khi ta đang đối diện khó khăn. Người chiến thắng học cách biết ơn giữa thử thách. Đó là bản lĩnh tinh thần và là cách để xây dựng sức bền tinh thần.</p>
+    </blockquote>
+
+    <p>Tư duy của người chiến thắng được nuôi dưỡng từ sức khỏe thể chất và thái độ sống. Khi bạn lựa chọn chăm sóc bản thân - ăn uống lành mạnh, tập luyện đều đặn, ngủ đủ - bạn tạo ra năng lượng để giữ tinh thần tích cực và hiệu suất cao. Bạn không thể có cuộc sống đẳng cấp thế giới với thái độ và sức khỏe tầm thường.</p>
+
+    <p>Tại Ashley, chúng ta được bao quanh bởi nhiều cơ hội - nếu chúng ta chọn nhìn thấy chúng.</p>
+
+    <ul>
+      <li>Chúng ta không phải đối mặt với sự thay đổi kỳ vọng của khách hàng; chúng ta được quyền sử dụng <span class="highlight-low">nguồn lực và tài năng của mình</span> để phục vụ họ tốt hơn bất kỳ ai.</li>
+      <li>Chúng ta không phải loay hoay với AI và tự động hóa; chúng ta được quyền tận dụng các công cụ này để tạo lợi thế cạnh tranh và khiến công việc ý nghĩa hơn, hiệu quả hơn.</li>
+      <li>Chúng ta không phải xây dựng văn hóa tốt hơn; chúng ta được quyền phục vụ nhân viên bằng cách kiến tạo nơi làm việc tốt nhất trong ngành, nơi mọi người thật sự phát triển.</li>
+    </ul>
+
+    <p>Chúng ta có kế hoạch tuyệt vời và những con người tuyệt vời. Tương lai rất tươi sáng, nhưng chúng ta phải thật sự hào hứng để tạo nên nó. Hãy chọn nhìn thấy các cơ hội phía trước thay vì sự khan hiếm của vấn đề.</p>
+
+    <p>Tuần này, tôi muốn thách thức bạn: Khi đối mặt khó khăn, hãy tập trung vào giải pháp. Khi căng thẳng, hãy vận động và làm mới tinh thần. Mỗi sáng thức dậy, hãy biết ơn vì những cơ hội bạn có.</p>
+
+    <blockquote>
+      <p><span class="highlight-high">Đừng là nạn nhân. Hãy là người chiến thắng.</span> Sự nghiệp, hạnh phúc và tương lai của bạn phụ thuộc vào những lựa chọn bạn đưa ra mỗi ngày.</p>
+    </blockquote>
+  </div>
 
   <div class="video">
     <iframe src="https://www.youtube.com/embed/e8HH4XHbEkk"
-            title="The Power of Gratitude | Shannon Shallcross | TEDxProvidence"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen></iframe>
+      title="The Power of Gratitude | Shannon Shallcross | TEDxProvidence"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen></iframe>
   </div>
-
-  <p>We will continue to "pivot" and adjust to the changing environment and our commitment to having the best operations to support our customers. <span class="highlight-high">We MUST be a Victor...</span></p>
 
   <p>Have an awesome week,</p>
   <p><strong>Todd Wanek | CEO</strong></p>
+
+  <script>
+    (function(){
+      const btnEn=document.getElementById('btn-en');
+      const btnVi=document.getElementById('btn-vi');
+      const en=document.getElementById('lang-en');
+      const vi=document.getElementById('lang-vi');
+      function setLang(lang){
+        const isEN=lang==='en';
+        en.classList.toggle('active',isEN);
+        vi.classList.toggle('active',!isEN);
+        btnEn.classList.toggle('active',isEN);
+        btnVi.classList.toggle('active',!isEN);
+      }
+      btnEn.addEventListener('click',()=>setLang('en'));
+      btnVi.addEventListener('click',()=>setLang('vi'));
+    })();
+  </script>
 </body>
 </html>
